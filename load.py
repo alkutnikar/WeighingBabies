@@ -20,12 +20,16 @@ DF_sammi = pd.DataFrame
 DF_train = pd.DataFrame
 DF_test = pd.DataFrame
 DF_eval = pd.DataFrame
+DF_sammi_male = pd.DataFrame
 
 def usr_load_sammi():
 	global DF_sammi 
 	DF_sammi = pd.DataFrame(DF_baby[(DF_baby['RACEMOM']==1) & (DF_baby['RACEDAD']==1) & 
                                 (DF_baby['MAGE'] > 25)  & (DF_baby['BPOUND'] < 20) & (DF_baby['MAGE'] < 50) 
                                 & (DF_baby['SEX'] == 2)])
+	DF_sammi_male = pd.DataFrame(DF_baby[(DF_baby['RACEMOM']==1) & (DF_baby['RACEDAD']==1) & 
+                                (DF_baby['MAGE'] > 25)  & (DF_baby['BPOUND'] < 20) & (DF_baby['MAGE'] < 50) 
+                                & (DF_baby['SEX'] == 1)])
 	print 'Mean Birth Weight for SammiDF ',DF_sammi['BPOUND'].mean()
 	print 'Median Birth Weight for SammiDF ', DF_sammi['BPOUND'].median()	
 
@@ -55,7 +59,7 @@ def usr_scatter_plot(var1,var2):
 
 	show()
 
-def usr_scatter_plot2():
+def usr_line_plot_USA():
 
 	# compute ideal values
 	#x = DF_sammi[var1]
@@ -81,7 +85,7 @@ def usr_scatter_plot2():
 
 def usr_histogram_plot(var1):
 	hold(False)
-       	figure(title="Dataset of Babies similar to Sammi's Baby",
+       	figure(title="Babies similar to Sammi's Baby",
        	x_axis_label = var1)
 	# sample the distribution
 
@@ -120,7 +124,6 @@ def usr_histogram_plot(var1):
 	show()
 
 
-
 def usr_random_splitDF():
 	DF_temp = pd.DataFrame	
 	rand_nos = np.random.rand(len(DF_baby)) < 0.7	
@@ -141,13 +144,13 @@ def usr_print_mod_csv():
 	print DF_babymod.head()
 
 
-
 def usr_decision_tree():
 	import trees
 
-#usr_load_sammi()
+usr_load_sammi()
 #usr_scatter_plot('GAINED','BPOUND')
 #usr_histogram_plot('BPOUND')
+#usr_histogram_plot_male('BPOUND')
 #usr_scatter_plot2()
 #print_mean()
 #usr_random_splitDF()
