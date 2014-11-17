@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-babiesDF = pd.read_csv('/home/rakesh/Desktop/Data Science/Data/2008_birth_data.csv')
+babiesDF = pd.read_csv('/2008_births.csv')
 slicedDF = pd.DataFrame
 trainDF = pd.DataFrame
 testDF = pd.DataFrame
