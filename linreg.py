@@ -2,6 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
+
+
+
+
 babiesDF = pd.read_csv('/2008_births.csv')
 slicedDF = pd.DataFrame
 trainDF = pd.DataFrame
