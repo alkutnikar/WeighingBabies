@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 
-babiesDF = pd.read_csv('/2008_births.csv')
+babiesDF = pd.read_csv('./2008_births.csv')
 slicedDF = pd.DataFrame
 trainDF = pd.DataFrame
 testDF = pd.DataFrame
